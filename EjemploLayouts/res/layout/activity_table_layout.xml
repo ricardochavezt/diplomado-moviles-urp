@@ -1,0 +1,69 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1"
+    tools:context=".TableLayoutActivity" >
+    <!-- El atributo stretchColumns indica las columnas que se expanden para llenar
+    	el espacio libre. Los números de columnas inician en 0.
+    	En este caso, se está indicando que la segunda columna debe ocupar el espacio restante -->
+
+    <!-- En el TableLayout, los componentes se colocan dentro de TableRows -->
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <!-- En el TableLayout, el atributo layout_column permite indicar una columna específica
+        	en la cual queremos posicionar el elemento.
+        	Si no se indica, se comienza desde la primera columna y se colocan los componentes
+        	en el orden en que aparecen en el XML -->
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="Opción 1" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <!-- En el TableLayout, el atributo layout_span indica cuántas columnas ocupa el componente,
+        	para casos en que queremos que el componente ocupe más de una columna -->
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:text="Aceptar" />
+
+    </TableRow>
+
+</TableLayout>

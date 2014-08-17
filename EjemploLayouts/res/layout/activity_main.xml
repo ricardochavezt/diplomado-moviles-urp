@@ -1,0 +1,40 @@
+<!-- El atributo orientation de un LinearLayout es el único obligatorio
+	Determina si los componentes se ordenan de forma vertical u horizontal.
+	
+	El atributo gravity permite indicar hacia qué lado del contenedor se 'pegarán'
+	los componentes. Para el caso del LinearLayout vertical, si cambiamos el valor
+	a bottom, todos los componentes 'caerán' hacia el margen inferior de la pantalla -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <!-- En el LinearLayout, el atributo layout:weight determina cuánto del espacio libre
+    	ocupa cada componente. 
+    	Si cambiamos este valor a uno diferente de 0, el TextView ocupará todo el espacio libre
+    	y empujará a los botones hacia el margen inferior.
+    	Si le agregamos el mismo atributo a otro componente, el espacio libre se repartirá de
+    	manera proporcional al valor del atributo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Este es un ejemplo de LinearLayout" />
+
+    <Button
+        android:id="@+id/btnRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver RelativeLayout" />
+
+    <Button
+        android:id="@+id/btnTableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver TableLayout" />
+
+</LinearLayout>
