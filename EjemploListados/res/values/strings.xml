@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EjemploListados</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ejemplo_listado_simple">Listado simple:</string>
+    <string-array name="diasSemana">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miércoles</item>
+        <item>Jueves</item>
+        <item>Viernes</item>
+        <item>Sábado</item>
+        <item>Domingo</item>
+    </string-array>
+    <string name="ejemplo_listado_personalizado">Listado personalizado:</string>
+
+</resources>
