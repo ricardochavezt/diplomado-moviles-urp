@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EjemploListados2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="departamentos">Departamento:</string>
+    <string name="seleccione_departamento">Seleccione un departamento</string>
+    <string name="provincias">Provincias:</string>
+
+    <string-array name="lista_departamentos">
+        <item>Amazonas</item>
+        <item>Áncash</item>
+        <item>Apurímac</item>
+        <item>Arequipa</item>
+        <item>Ayacucho</item>
+        <item>Cajamarca</item>
+        <item>Callao</item>
+        <item>Cuzco</item>
+        <item>Huancavelica</item>
+        <item>Huánuco</item>
+        <item>Ica</item>
+        <item>Junín</item>
+        <item>La Libertad</item>
+        <item>Lambayeque</item>
+        <item>Lima</item>
+        <item>Loreto</item>
+        <item>Madre de Dios</item>
+        <item>Moquegua</item>
+        <item>Pasco</item>
+        <item>Piura</item>
+        <item>Puno</item>
+        <item>San Martín</item>
+        <item>Tacna</item>
+        <item>Tumbes</item>
+        <item>Ucayali</item>
+    </string-array>
+    <string-array name="lista_provincias_0">
+        <item>(No se ha seleccionado un departamento)</item>
+    </string-array>
+    <string-array name="lista_provincias_1">
+        <item>Chachapoyas</item>
+        <item>Bagua</item>
+        <item>Bongará</item>
+        <item>Condorcanqui</item>
+        <item>Luya</item>
+        <item>Rodríguez de Mendoza</item>
+        <item>Utcubamba</item>
+    </string-array>
+    <string-array name="lista_provincias_2">
+        <item>Huaraz</item>
+        <item>Aija</item>
+        <item>Antonio Raimondi</item>
+        <item>Asunción</item>
+        <item>Bolognesi</item>
+        <item>Carhuaz</item>
+        <item>Carlos Fermín Fitzcarrald</item>
+        <item>Casma</item>
+        <item>Corongo</item>
+        <item>Huari</item>
+        <item>Huarmey</item>
+        <item>Huaylas</item>
+        <item>Mariscal Luzuriaga</item>
+        <item>Ocros</item>
+        <item>Pallasca</item>
+        <item>Pomabamba</item>
+        <item>Recuay</item>
+        <item>Santa</item>
+        <item>Sihuas</item>
+        <item>Yungay</item>
+    </string-array>
+    <string-array name="lista_provincias_3">
+        <item>Abancay</item>
+        <item>Andahuaylas</item>
+        <item>Antabamba</item>
+        <item>Aymaraes</item>
+        <item>Cotabambas</item>
+        <item>Chincheros</item>
+        <item>Grau</item>
+    </string-array>
+    <string-array name="lista_provincias_4">
+        <item>Arequipa</item>
+        <item>Camaná</item>
+        <item>Caravelí</item>
+        <item>Castilla</item>
+        <item>Caylloma</item>
+        <item>Condesuyos</item>
+        <item>Islay</item>
+        <item>La Unión</item>
+    </string-array>
+    <string-array name="lista_provincias_5">
+        <item>Huamanga</item>
+        <item>Cangallo</item>
+        <item>Huancasancos</item>
+        <item>Huanta</item>
+        <item>La Mar</item>
+        <item>Lucanas</item>
+        <item>Parinacochas</item>
+        <item>Páucar del Sarasara</item>
+        <item>Sucre</item>
+        <item>Víctor Fajardo</item>
+        <item>Vilcashuamán</item>
+    </string-array>
+    <string-array name="lista_provincias_6">
+        <item>Cajamarca</item>
+        <item>Cajabamba</item>
+        <item>Celendín</item>
+        <item>Chota</item>
+        <item>Contumazá</item>
+        <item>Cutervo</item>
+        <item>Hualgayoc</item>
+        <item>Jaén</item>
+        <item>San Ignacio</item>
+        <item>San Marcos</item>
+        <item>San Miguel</item>
+        <item>San Pablo</item>
+        <item>Santa Cruz</item>
+    </string-array>
+    <string-array name="lista_provincias_7">
+        <item>Callao</item>
+    </string-array>
+    <string-array name="lista_provincias_8">
+        <item>Cuzco</item>
+        <item>Acomayo</item>
+        <item>Anta</item>
+        <item>Calca</item>
+        <item>Canas</item>
+        <item>Canchis</item>
+        <item>Chumbivilcas</item>
+        <item>Espinar</item>
+        <item>La Convención</item>
+        <item>Paruro</item>
+        <item>Paucartambo</item>
+        <item>Quispicanchi</item>
+        <item>Urubamba</item>
+    </string-array>
+    <string-array name="lista_provincias_9">
+        <item>Huancavelica</item>
+        <item>Acobamba</item>
+        <item>Angaraes</item>
+        <item>Castrovirreyna</item>
+        <item>Churcampa</item>
+        <item>Huaytará</item>
+        <item>Tayacaja</item>
+    </string-array>
+    <string-array name="lista_provincias_10">
+        <item>Huánuco</item>
+        <item>Ambo</item>
+        <item>Dos de Mayo</item>
+        <item>Huacaybamba</item>
+        <item>Huamalíes</item>
+        <item>Leoncio Prado</item>
+        <item>Marañón</item>
+        <item>Pachitea</item>
+        <item>Puerto Inca</item>
+        <item>Lauricocha</item>
+        <item>Yarowilca</item>
+    </string-array>
+    <string-array name="lista_provincias_11">
+        <item>Ica</item>
+        <item>Chincha</item>
+        <item>Nazca</item>
+        <item>Palpa</item>
+        <item>Pisco</item>
+    </string-array>
+    <string-array name="lista_provincias_12">
+        <item>Huancayo</item>
+        <item>Concepción</item>
+        <item>Chanchamayo</item>
+        <item>Jauja</item>
+        <item>Junín</item>
+        <item>Satipo</item>
+        <item>Tarma</item>
+        <item>Yauli</item>
+        <item>Chupaca</item>
+    </string-array>
+    <string-array name="lista_provincias_13">
+        <item>Trujillo</item>
+        <item>Ascope</item>
+        <item>Bolívar</item>
+        <item>Chepén</item>
+        <item>Julcán</item>
+        <item>Otuzco</item>
+        <item>Pacasmayo</item>
+        <item>Pataz</item>
+        <item>Sánchez Carrión</item>
+        <item>Santiago de Chuco</item>
+        <item>Gran Chimú</item>
+        <item>Virú</item>
+    </string-array>
+    <string-array name="lista_provincias_14">
+        <item>Chiclayo</item>
+        <item>Ferreñafe</item>
+        <item>Lambayeque</item>
+    </string-array>
+    <string-array name="lista_provincias_15">
+        <item>Lima</item>
+        <item>Barranca</item>
+        <item>Cajatambo</item>
+        <item>Canta</item>
+        <item>Cañete</item>
+        <item>Huaral</item>
+        <item>Huarochirí</item>
+        <item>Huaura</item>
+        <item>Oyón</item>
+        <item>Yauyos</item>
+    </string-array>
+    <string-array name="lista_provincias_16">
+        <item>Maynas</item>
+        <item>Alto Amazonas</item>
+        <item>Loreto</item>
+        <item>Mariscal Ramón Castilla</item>
+        <item>Requena</item>
+        <item>Ucayali</item>
+        <item>Datem del Marañón</item>
+    </string-array>
+    <string-array name="lista_provincias_17">
+        <item>Tambopata</item>
+        <item>Manu</item>
+        <item>Tahuamanu</item>
+    </string-array>
+    <string-array name="lista_provincias_18">
+        <item>Mariscal Nieto</item>
+        <item>General Sánchez Cerro</item>
+        <item>Ilo</item>
+    </string-array>
+    <string-array name="lista_provincias_19">
+        <item>Pasco</item>
+        <item>Daniel Alcides Carrión</item>
+        <item>Oxapampa</item>
+    </string-array>
+    <string-array name="lista_provincias_20">
+        <item>Piura</item>
+        <item>Ayabaca</item>
+        <item>Huancabamba</item>
+        <item>Morropón</item>
+        <item>Paita</item>
+        <item>Sullana</item>
+        <item>Talara</item>
+        <item>Sechura</item>
+    </string-array>
+    <string-array name="lista_provincias_21">
+        <item>Puno</item>
+        <item>Azángaro</item>
+        <item>Carabaya</item>
+        <item>Chucuito</item>
+        <item>El Collao</item>
+        <item>Huancané</item>
+        <item>Lampa</item>
+        <item>Melgar</item>
+        <item>Moho</item>
+        <item>San Antonio de Putina</item>
+        <item>San Román</item>
+        <item>Sandia</item>
+        <item>Yunguyo</item>
+    </string-array>
+    <string-array name="lista_provincias_22">
+        <item>Moyobamba</item>
+        <item>Bellavista</item>
+        <item>El Dorado</item>
+        <item>Huallaga</item>
+        <item>Lamas</item>
+        <item>Mariscal Cáceres</item>
+        <item>Picota</item>
+        <item>Rioja</item>
+        <item>San Martín</item>
+        <item>Tocache</item>
+    </string-array>
+    <string-array name="lista_provincias_23">
+        <item>Tumbes</item>
+        <item>Contralmirante Villar</item>
+        <item>Zarumilla</item>
+    </string-array>
+    <string-array name="lista_provincias_24">
+        <item>Coronel Portillo</item>
+        <item>Atalaya</item>
+        <item>Padre Abad</item>
+        <item>Purús</item>
+    </string-array>
+
+</resources>
