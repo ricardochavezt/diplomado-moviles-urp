@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LoginApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="title_activity_usuario">Bienvenido</string>
+
+</resources>
