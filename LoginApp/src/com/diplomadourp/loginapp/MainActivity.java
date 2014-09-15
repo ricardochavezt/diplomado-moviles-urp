@@ -4,14 +4,19 @@ import com.diplomadourp.loginapp.modelo.GestorLogin;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends FragmentActivity 
+		implements OnClickListener, 
+			MensajeDialogFragment.OnDialogResult {
 	
 	EditText eteUsuario;
 	EditText etePassword;
@@ -38,13 +43,50 @@ public class MainActivity extends Activity implements OnClickListener {
 		String usuario = eteUsuario.getText().toString();
 		String password = etePassword.getText().toString();
 		
-		if (gestorLogin.iniciarSesion(usuario, password)) {
-			Intent intent = new Intent(this, UsuarioActivity.class);
-			intent.putExtra("usuario", usuario);
-			startActivity(intent);
+		llamarLogin(usuario, password);
+	}
+	
+	public void llamarLogin(final String usuario, final String password) {
+		new TareaLogin().execute(usuario, password);
+	}
+	
+	class TareaLogin extends AsyncTask<String, Integer, Boolean> {
+		String nombreUsuario;
+		
+		@Override
+		protected Boolean doInBackground(String... params) {
+			String usuario = params[0];
+			String password = params[1];
+			
+			nombreUsuario = usuario;
+			return MainActivity.this.gestorLogin
+					.iniciarSesion(usuario, password);
 		}
-		else {
-			Toast.makeText(this, "Usuario inv‡lido", Toast.LENGTH_SHORT).show();
+		
+		@Override
+		protected void onPostExecute(Boolean result) {
+			if (result) {
+				Intent intent = new Intent(MainActivity.this, 
+						UsuarioActivity.class);
+				
+				intent.putExtra("usuario", nombreUsuario);
+				startActivity(intent);
+				Log.i("LoginApp", "usuario válido");
+			}
+			else {
+				MensajeDialogFragment dialogo = 
+						new MensajeDialogFragment();
+				dialogo.show(getSupportFragmentManager(), 
+						"mensaje");
+				Log.i("LoginApp", "usuario inválido");
+			}
 		}
+	}
+
+	@Override
+	public void onDialogOK() {
+		eteUsuario.setText("");
+		etePassword.setText("");
+		eteUsuario.requestFocus();
 	}
 }

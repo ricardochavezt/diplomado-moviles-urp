@@ -7,5 +7,6 @@
     <string name="hint_password">Password</string>
     <string name="btn_ingresar">Ingresar</string>
     <string name="title_activity_usuario">Bienvenido</string>
+    <string name="texto_ok">Aceptar</string>
 
 </resources>
