@@ -21,6 +21,7 @@ public class MainActivity extends FragmentActivity
 	EditText eteUsuario;
 	EditText etePassword;
 	Button btnIngresar;
+	Button btnRegistrarUsuario;
 	
 	GestorLogin gestorLogin;
 	
@@ -32,18 +33,31 @@ public class MainActivity extends FragmentActivity
 		eteUsuario = (EditText) findViewById(R.id.eteUsuario);
 		etePassword = (EditText) findViewById(R.id.etePassword);
 		btnIngresar = (Button) findViewById(R.id.btnIngresar);
+		btnRegistrarUsuario = (Button) findViewById(R.id.btnRegistrarUsuario);
 		
 		btnIngresar.setOnClickListener(this);
+		btnRegistrarUsuario.setOnClickListener(this);
 		
 		gestorLogin = new GestorLogin();
 	}
 
 	@Override
 	public void onClick(View view) {
-		String usuario = eteUsuario.getText().toString();
-		String password = etePassword.getText().toString();
-		
-		llamarLogin(usuario, password);
+		switch (view.getId()) {
+		case R.id.btnIngresar:
+			String usuario = eteUsuario.getText().toString();
+			String password = etePassword.getText().toString();
+			
+			llamarLogin(usuario, password);
+			break;
+		case R.id.btnRegistrarUsuario:
+			Intent intent = new Intent(this, RegistroActivity.class);
+			startActivity(intent);
+			break;
+
+		default:
+			break;
+		}		
 	}
 	
 	public void llamarLogin(final String usuario, final String password) {

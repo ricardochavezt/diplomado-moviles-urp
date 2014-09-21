@@ -30,10 +30,15 @@
 
     <Button
         android:id="@+id/btnIngresar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp"
         android:text="@string/btn_ingresar" />
+    
+    <Button android:id="@+id/btnRegistrarUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/btn_registrar_usuario" />
 
 </LinearLayout>

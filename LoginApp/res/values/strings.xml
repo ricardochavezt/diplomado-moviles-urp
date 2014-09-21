@@ -6,7 +6,13 @@
     <string name="hint_usuario">Usuario</string>
     <string name="hint_password">Password</string>
     <string name="btn_ingresar">Ingresar</string>
+    <string name="btn_registrar_usuario">Registrar usuario</string>
     <string name="title_activity_usuario">Bienvenido</string>
     <string name="texto_ok">Aceptar</string>
+    <string name="title_activity_registro">RegistroActivity</string>
+    <string name="hint_nombreCompleto">Nombre y apellido</string>
+    <string name="hint_nombreUsuario">Nombre de usuario</string>
+    <string name="hint_repetirPassword">Repetir password</string>
+    <string name="btn_registrar">Registrar</string>
 
 </resources>
