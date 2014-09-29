@@ -16,7 +16,8 @@ import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity 
 		implements OnClickListener, 
-			MensajeDialogFragment.OnDialogResult {
+			MensajeDialogFragment.OnDialogResult,
+			GestorLogin.LoginListener {
 	
 	EditText eteUsuario;
 	EditText etePassword;
@@ -39,6 +40,7 @@ public class MainActivity extends FragmentActivity
 		btnRegistrarUsuario.setOnClickListener(this);
 		
 		gestorLogin = new GestorLogin();
+		gestorLogin.setListener(this);
 	}
 
 	@Override
@@ -61,46 +63,34 @@ public class MainActivity extends FragmentActivity
 	}
 	
 	public void llamarLogin(final String usuario, final String password) {
-		new TareaLogin().execute(usuario, password);
+		gestorLogin.iniciarSesion(usuario, password);
 	}
 	
-	class TareaLogin extends AsyncTask<String, Integer, Boolean> {
-		String nombreUsuario;
-		
-		@Override
-		protected Boolean doInBackground(String... params) {
-			String usuario = params[0];
-			String password = params[1];
-			
-			nombreUsuario = usuario;
-			return MainActivity.this.gestorLogin
-					.iniciarSesion(usuario, password);
-		}
-		
-		@Override
-		protected void onPostExecute(Boolean result) {
-			if (result) {
-				Intent intent = new Intent(MainActivity.this, 
-						UsuarioActivity.class);
-				
-				intent.putExtra("usuario", nombreUsuario);
-				startActivity(intent);
-				Log.i("LoginApp", "usuario válido");
-			}
-			else {
-				MensajeDialogFragment dialogo = 
-						new MensajeDialogFragment();
-				dialogo.show(getSupportFragmentManager(), 
-						"mensaje");
-				Log.i("LoginApp", "usuario inválido");
-			}
-		}
-	}
 
 	@Override
 	public void onDialogOK() {
 		eteUsuario.setText("");
 		etePassword.setText("");
 		eteUsuario.requestFocus();
+	}
+
+	@Override
+	public void onLoginResponse(boolean usuarioValido) {
+		if (usuarioValido) {
+			Intent intent = new Intent(MainActivity.this, 
+					UsuarioActivity.class);
+			
+			String usuario = eteUsuario.getText().toString();
+			intent.putExtra("usuario", usuario);
+			startActivity(intent);
+			Log.i("LoginApp", "usuario válido");
+		}
+		else {
+			MensajeDialogFragment dialogo = 
+					new MensajeDialogFragment();
+			dialogo.show(getSupportFragmentManager(), 
+					"mensaje");
+			Log.i("LoginApp", "usuario inválido");
+		}
 	}
 }
