@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BusquedaGoogle</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="buscar">Buscar:</string>
+    <string name="btn_buscar">Buscar en Google</string>
+    <string name="title_activity_resultados">ResultadosActivity</string>
+    <string name="titulo_cargando">Efectuando búsqueda...</string>
+    <string name="titulo_resultado">Resultados de búsqueda para: %s</string>
+
+</resources>
