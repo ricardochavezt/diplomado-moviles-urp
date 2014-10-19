@@ -4,6 +4,7 @@ import com.diplomadourp.loginapp.modelo.GestorLogin;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -41,6 +42,10 @@ public class MainActivity extends FragmentActivity
 		
 		gestorLogin = new GestorLogin();
 		gestorLogin.setListener(this);
+		
+		SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+		String ultimoUsuario = preferences.getString("ultimoUsuario", "");
+		eteUsuario.setText(ultimoUsuario);
 	}
 
 	@Override
@@ -92,5 +97,15 @@ public class MainActivity extends FragmentActivity
 					"mensaje");
 			Log.i("LoginApp", "usuario inválido");
 		}
+	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		
+		SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString("ultimoUsuario", eteUsuario.getText().toString());
+		editor.commit();
 	}
 }

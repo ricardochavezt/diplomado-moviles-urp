@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.diplomadourp.ejemplocontroles.MainActivity" >
+
+    <!-- Con el tag EditText creamos un control de caja de texto editable -->
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text" >
+
+        <!-- requestFocus sirve para que este control tenga el foco apenas
+        	se muestre la pantalla -->
+        <requestFocus />
+    </EditText>
+
+    <!-- Con el tag CheckBox creamos un control tipo checkbox -->
+    <CheckBox
+        android:id="@+id/chkAdmiracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar signos de admiración" />
+
+    <!-- TextView sirve para mostrar texto no editable -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tratamiento"
+        android:textAppearance="?android:attr/textAppearance" />
+
+    <!-- Con el tag RadioGroup agrupamos RadioButtons para que solamente
+    	se pueda seleccionar uno de ellos -->
+    <RadioGroup
+        android:id="@+id/rbgTratamiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <!-- Con el tag RadioButton creamos un botón de opción
+        	El atributo checked sirve para indicar si el RadioButton debe estar
+        	marcado inicialmente. También aplica para los CheckBox -->
+        <RadioButton
+            android:id="@+id/rbSr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Sr." />
+
+        <RadioButton
+            android:id="@+id/rbSra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sra." />
+    </RadioGroup>
+
+    <!-- Con el tag Button creamos un botón -->
+    <Button
+        android:id="@+id/btnMostrarMensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostrar mensaje" />
+
+</LinearLayout>
