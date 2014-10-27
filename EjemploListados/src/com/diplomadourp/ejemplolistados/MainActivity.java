@@ -3,38 +3,74 @@ package com.diplomadourp.ejemplolistados;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 	
 	Spinner spnDiasSemana;
 	Spinner spnPaises;
+	PaisesAdapter paisesAdapter;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		paisesAdapter = new PaisesAdapter(this, obtenerListadoPaises());
 		
-		spnDiasSemana = (Spinner) findViewById(R.id.spnDiasSemana);
-		spnPaises = (Spinner) findViewById(R.id.spnPaises);
+		ActionBar actionBar = getActionBar();
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		
-		// Este es el caso más sencillo: cuando tenemos un arreglo constante de cadenas
-		// Previamente, hemos definido en el archivo strings.xml un string-array con nombre diasSemana
-		// Para utilizarlo, creamos un ArrayAdapter con el método createFromResource
-		ArrayAdapter<CharSequence> adapterDiasSemana = 
-				ArrayAdapter.createFromResource(this, R.array.diasSemana,
-						android.R.layout.simple_spinner_item);
-		adapterDiasSemana.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spnDiasSemana.setAdapter(adapterDiasSemana);
+		SpinnerAdapter adapter = ArrayAdapter.createFromResource(this,
+				R.array.opciones_vista, android.R.layout.simple_spinner_item);
+		ActionBar.OnNavigationListener navigationListener = 
+				new ActionBar.OnNavigationListener() {
+			@Override
+			public boolean onNavigationItemSelected(int position, long itemId) {
+				Fragment fragmentSel = null;
+				FragmentManager fm = getSupportFragmentManager();
+				switch (position) {
+				case 0:
+					fragmentSel = new FragmentListado();
+					((FragmentListado)fragmentSel).listadoPaises = obtenerListadoPaises();
+					break;
+				case 1:
+					fragmentSel = new FragmentGrilla();
+					((FragmentGrilla)fragmentSel).listadoPaises = obtenerListadoPaises();
+					break;
+
+				default:
+					break;
+				}
+				if (fragmentSel != null) {
+					FragmentTransaction ft = fm.beginTransaction();
+					ft.replace(R.id.frame_contenido, fragmentSel);
+					ft.commit();
+				}
+				return true;
+			}
+		};
+		actionBar.setListNavigationCallbacks(adapter, navigationListener);
 		
-		// Para el caso personalizado, hemos creado previamente nuestra clase PaisesAdapter y
-		// nuestro layout para el item del listado (list_item_paises.xml)
-		// Aquí creamos el adapter y lo asignamos al Spinner
-		PaisesAdapter adapterPaises = new PaisesAdapter(this, obtenerListadoPaises());
-		spnPaises.setAdapter(adapterPaises);
+		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+		FragmentListado fl = new FragmentListado();
+		fl.listadoPaises = obtenerListadoPaises();
+		ft.add(R.id.frame_contenido, fl);
+		ft.commit();
 	}
 	
 	private List<DataPaises> obtenerListadoPaises() {
@@ -48,5 +84,31 @@ public class MainActivity extends Activity {
 		listadoPaises.add(new DataPaises("Canada", R.drawable.ic_canada));
 		listadoPaises.add(new DataPaises("Chile", R.drawable.ic_chile));
 		return listadoPaises;
+	}
+	
+	public static class FragmentListado extends Fragment {
+		public List<DataPaises> listadoPaises;
+		@Override
+		public View onCreateView(LayoutInflater inflater,
+				ViewGroup container,
+				Bundle savedInstanceState) {
+			View layoutListado = inflater.inflate(R.layout.fragment_listado, container, false);
+			ListView lviPaises = (ListView) layoutListado.findViewById(R.id.lviPaises);
+			lviPaises.setAdapter(new PaisesAdapter(getActivity(), listadoPaises));
+			return layoutListado;
+		}
+	}
+	
+	public static class FragmentGrilla extends Fragment {
+		public List<DataPaises> listadoPaises;
+		@Override
+		public View onCreateView(LayoutInflater inflater,
+				ViewGroup container,
+				Bundle savedInstanceState) {
+			View layoutGrilla = inflater.inflate(R.layout.fragment_grilla, container, false);
+			GridView gviPaises = (GridView) layoutGrilla.findViewById(R.id.gviPaises);
+			gviPaises.setAdapter(new PaisesAdapter(getActivity(), listadoPaises));
+			return layoutGrilla;
+		}
 	}
 }

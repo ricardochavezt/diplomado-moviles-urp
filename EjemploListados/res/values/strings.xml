@@ -14,5 +14,9 @@
         <item>Domingo</item>
     </string-array>
     <string name="ejemplo_listado_personalizado">Listado personalizado:</string>
+    <string-array name="opciones_vista">
+        <item>Listado</item>
+        <item>Grilla</item>
+    </string-array>
 
 </resources>
