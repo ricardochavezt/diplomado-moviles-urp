@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/control_servicios" />
+
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Iniciar" />
+
+    <Button
+        android:id="@+id/btnEnviarMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnIniciar"
+        android:layout_alignBottom="@+id/btnIniciar"
+        android:layout_centerHorizontal="true"
+        android:text="Mensaje" />
+
+    <Button
+        android:id="@+id/btnDetener"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnEnviarMensaje"
+        android:layout_alignBottom="@+id/btnEnviarMensaje"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:text="Detener" />
+
+</RelativeLayout>
