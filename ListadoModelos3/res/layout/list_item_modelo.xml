@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/selector_fondo_lista" >
+
+    <ImageView
+        android:id="@+id/iviFoto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tviProfesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tviNombre"
+        android:layout_below="@+id/tviNombre"
+        android:layout_marginTop="8dp"
+        android:text="Profesión"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        style="@style/TextFormat"
+        android:id="@+id/tviNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iviFoto"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/iviFoto"
+        android:text="Nombre"
+         />
+
+</RelativeLayout>

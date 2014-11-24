@@ -22,6 +22,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainMapsActivity extends Activity implements LocationListener {
@@ -29,6 +30,8 @@ public class MainMapsActivity extends Activity implements LocationListener {
 	private GoogleMap mapa;
 
 	private Circle circle;
+	
+	private Marker marcador;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -94,10 +97,16 @@ public class MainMapsActivity extends Activity implements LocationListener {
 		circle = mapa.addCircle(circleOptions);
 		
 		mapa.setOnMapClickListener(new OnMapClickListener() {
-			
 			@Override
 			public void onMapClick(LatLng latlng) {
-				//latlng
+				if (marcador == null) {
+					MarkerOptions markerOpt = new MarkerOptions();
+					markerOpt.position(latlng);
+					marcador = mapa.addMarker(markerOpt);
+				}
+				else {
+					marcador.setPosition(latlng);
+				}
 			}
 		});
 		
